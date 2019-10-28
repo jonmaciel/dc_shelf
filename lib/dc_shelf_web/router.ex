@@ -7,5 +7,7 @@ defmodule DcShelfWeb.Router do
 
   scope "/api", DcShelfWeb do
     pipe_through :api
+
+    post "/shelf_organizations", ShelfOrganizationsController, :create
   end
 end
