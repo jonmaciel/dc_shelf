@@ -34,6 +34,7 @@ defmodule DcShelf.MixProject do
     [
       {:redix, ">= 0.0.0"},
       {:castore, ">= 0.0.0"},
+      {:exq, "~> 0.13.3"},
       {:redis, "~> 0.1"},
       {:circuits_gpio, "~> 0.4"},
       {:phoenix, "~> 1.4.0"},

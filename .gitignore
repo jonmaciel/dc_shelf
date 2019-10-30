@@ -34,3 +34,15 @@ dc_shelf-*.tar
 # secrets files as long as you replace their contents by environment
 # variables.
 /config/*.secret.exs
+
+# Swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+.session*
+
+# Redis
+*.rdb
+
