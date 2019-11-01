@@ -38,7 +38,7 @@ defmodule Services.CreateOrganization do
         Redix.command(conn, ["SET", shelf_key, Jason.encode!(params)])
     end
 
-    Exq.enqueue_in(Exq, "default", 2, Workers.CheckShelfSlot, [shelf_key, false])
+    Exq.enqueue_in(Exq, "default", 1, Workers.CheckShelfSlot, [shelf_key, false])
 
     {:ok, shelf_key}
   end

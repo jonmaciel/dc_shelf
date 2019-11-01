@@ -28,7 +28,7 @@ defmodule Workers.CheckShelfSlot do
   # wainting for  shopper
   defp reschedule!(false, false, shelf_key) do
     # reschedule to check if it stills waiting
-    Exq.enqueue_in(Exq, "default", 2, Workers.CheckShelfSlot, [shelf_key, false])
+    Exq.enqueue_in(Exq, "default", 1, Workers.CheckShelfSlot, [shelf_key, false])
   end
 
   # shopper bringg the order! thx shopper! It's heavy!
@@ -41,14 +41,14 @@ defmodule Workers.CheckShelfSlot do
 
     # reschedule to check if delivery stil on shelf
     # it means: NEXT STEP!!!!
-    Exq.enqueue_in(Exq, "default", 2, Workers.CheckShelfSlot, [shelf_key, true])
+    Exq.enqueue_in(Exq, "default", 1, Workers.CheckShelfSlot, [shelf_key, true])
   end
 
   # buttom is pressed, and is on shelf
   defp reschedule!(true, true, shelf_key) do
     # delivery is on shelf
     # reschedule to check if it still on shelf
-    Exq.enqueue_in(Exq, "default", 2, Workers.CheckShelfSlot, [shelf_key, true])
+    Exq.enqueue_in(Exq, "default", 1, Workers.CheckShelfSlot, [shelf_key, true])
     # TODO: Send to hub  Ready to delivery
   end
 
