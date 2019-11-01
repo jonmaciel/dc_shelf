@@ -41,9 +41,12 @@ import_config "#{Mix.env()}.exs"
 
 # shelf: gpio_pin
 config :dc_shelf,
-  webhook_urls: %{
-    "http://localhost:4000/api/tuktuk_webhook_update" => "dnada/616c5cc9cab1ecf30e45fe8781cf71b2"
-  },
+  webhook_urls: [
+    %{
+      url: "http://localhost:4000/api/tuktuk_webhook_update",
+      header: "dnada/616c5cc9cab1ecf30e45fe8781cf71b2"
+    }
+  ],
   shelf_slots: %{
     "shelf_slot_blue" => [shelf_pin: 22, shopper_pin: 4, driver_pin: 14],
     "shelf_slot_red" => [shelf_pin: 23, shopper_pin: 17, driver_pin: 18]

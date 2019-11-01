@@ -56,6 +56,8 @@ defmodule Workers.CheckShelfSlot do
   defp reschedule!(false, true, shelf_key) do
     # order has been taken
     # it means: Finished!!!!
+    Services.SendInformationRequest.call(shelf_key, "delivered")
+
     get_pin(shelf_key)[:driver_pin]
     |> turn_off_pin!()
 
@@ -77,7 +79,7 @@ defmodule Workers.CheckShelfSlot do
         Circuits.GPIO.close(gpio)
 
       {:error, _} ->
-        raise "Error on gpio connection - trying to turn off"
+        raise "Error on gpio connection to pin ##{pin} - trying to turn off"
     end
   end
 
@@ -88,7 +90,7 @@ defmodule Workers.CheckShelfSlot do
         Circuits.GPIO.close(gpio)
 
       {:error, _} ->
-        raise "Error on gpio connection - trying to turn on"
+        raise "Error on gpio connection to pin ##{pin} - trying to turn on"
     end
   end
 end

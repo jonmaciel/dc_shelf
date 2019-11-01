@@ -41,6 +41,8 @@ defmodule DcShelf.MixProject do
       {:phoenix_pubsub, "~> 1.1"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
+      {:exvcr, "~> 0.8", only: :test},
+      {:httpotion, "~> 3.0"},
       {:plug_cowboy, "~> 2.0"}
     ]
   end

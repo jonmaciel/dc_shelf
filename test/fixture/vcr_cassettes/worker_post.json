@@ -1,0 +1,50 @@
+[
+  {
+    "request": {
+      "body": "{\"externalId\":\"1\",\"internalId\":\"1\",\"serviceType\":\"dc_shelf\",\"status\":\"delivered\"}",
+      "headers": {
+        "content-type": "application/json",
+        "Authorization": "aaa"
+      },
+      "method": "post",
+      "options": {
+        "ssl_options": {
+          "server_name_indication": [
+            119,
+            101,
+            98,
+            104,
+            111,
+            111,
+            107,
+            46,
+            115,
+            105,
+            116,
+            101
+          ]
+        }
+      },
+      "request_body": "",
+      "url": "https://webhook.site/a8024363-a668-400c-a6ff-8836195edf56"
+    },
+    "response": {
+      "binary": false,
+      "body": "",
+      "headers": {
+        "Server": "nginx/1.10.3",
+        "Content-Type": "text/plain; charset=UTF-8",
+        "Transfer-Encoding": "chunked",
+        "Vary": "Accept-Encoding",
+        "X-Request-Id": "e34ab35d-019b-4d4f-93b9-23e65d5a03a2",
+        "X-Token-Id": "a8024363-a668-400c-a6ff-8836195edf56",
+        "Cache-Control": "no-cache, private",
+        "Date": "Fri, 01 Nov 2019 02:42:21 GMT",
+        "X-RateLimit-Limit": "100",
+        "X-RateLimit-Remaining": "98"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
